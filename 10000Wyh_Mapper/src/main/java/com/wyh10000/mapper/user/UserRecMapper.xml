@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wyh10000.mapper.user.UserRecMapper">
+  <resultMap id="BaseResultMap" type="com.wyh10000.domain.UserRec">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="recuid" jdbcType="INTEGER" property="recuid" />
+    <result column="berecuid" jdbcType="INTEGER" property="berecuid" />
+    <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, recuid, berecuid, createtime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_userrec
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_userrec
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.wyh10000.domain.UserRec">
+    insert into t_userrec (id, recuid, berecuid, 
+      createtime)
+    values (#{id,jdbcType=INTEGER}, #{recuid,jdbcType=INTEGER}, #{berecuid,jdbcType=INTEGER}, 
+      #{createtime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wyh10000.domain.UserRec">
+    insert into t_userrec
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="recuid != null">
+        recuid,
+      </if>
+      <if test="berecuid != null">
+        berecuid,
+      </if>
+      <if test="createtime != null">
+        createtime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="recuid != null">
+        #{recuid,jdbcType=INTEGER},
+      </if>
+      <if test="berecuid != null">
+        #{berecuid,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wyh10000.domain.UserRec">
+    update t_userrec
+    <set>
+      <if test="recuid != null">
+        recuid = #{recuid,jdbcType=INTEGER},
+      </if>
+      <if test="berecuid != null">
+        berecuid = #{berecuid,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null">
+        createtime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wyh10000.domain.UserRec">
+    update t_userrec
+    set recuid = #{recuid,jdbcType=INTEGER},
+      berecuid = #{berecuid,jdbcType=INTEGER},
+      createtime = #{createtime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

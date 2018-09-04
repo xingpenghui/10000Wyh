@@ -1,0 +1,65 @@
+<header>
+    <div class="header-top min-width">
+        <div class="container fn-clear"> <strong class="fn-left">咨询热线：400-668-6698<span class="s-time">服务时间：9:00 - 18:00</span></strong>
+            <ul class="header_contact">
+                <li class="c_1"> <a class="ico_head_weixin" id="wx"></a>
+                    <div class="ceng" id="weixin_xlgz" style="display: none;">
+                        <div class="cnr"> <img src="images/code.png"> </div>
+                        <b class="ar_up ar_top"></b> <b class="ar_up_in ar_top_in"></b> </div>
+                </li>
+                <li class="c_2"><a href="#" target="_blank" title="官方QQ" alt="官方QQ"><b class="ico_head_QQ"></b></a></li>
+                <li class="c_4"><a href="#" target="_blank" title="新浪微博" alt="新浪微博"><b class="ico_head_sina"></b></a></li>
+            </ul>
+            <script type="application/javascript">
+                function init() {
+                    var token = getCK("userauth");
+                    $.ajax({
+                        url: "http://localhost:8081/usercheck.do",
+                        method: "get",
+                        xhrFields: {withCredentials: true},
+                        success: function (obj) {
+                            if (obj.code == 0) {
+                                $(".u1").css("display", "block");
+                                $(".u2").css("display", "none");
+                                $("#ainfo").html(obj.data.username);
+                            } else {
+                                $(".u1").css("display", "none");
+                                $(".u2").css("display", "block");
+                            }
+                        }
+                    })
+                }
+               init();
+            </script>
+            <ul class="fn-right header-top-ul">
+                <li> <a href="index.html" class="app">返回首页</a> </li>
+                    <li class="u1">
+                        <div class=""><a href="account" class="c-orange" title="我的账号" id="ainfo">我的账号</a></div>
+                    </li>
+                    <li class="u1">
+                        <div ><a href="logout" class="js-login" title="注销">注销</a></div>
+                    </li>
+                    <li id="register" class="u2">
+                        <div ><a href="register.html" class="c-orange" title="免费注册">免费注册</a></div>
+                    </li>
+                    <li id="login" class="u2">
+                        <div class=""><a href="login.html" class="js-login" title="登录">登录</a></div>
+                    </li>
+            </ul>
+        </div>
+    </div>
+    <div class="header min-width">
+        <div class="container">
+            <div class="fn-left logo"> <a class="" href="index"> <img src="images/logo.png"  title=""> </a> </div>
+            <ul class="top-nav fn-clear">
+                <li class="on"> <a href="index">首页</a> </li>
+                <li> <a href="list.html" class="">我要投资</a> </li>
+                <li> <a href="borrow.html" class="">我要借款</a> </li>
+                <li> <a href="msghelp.html">安全保障</a> </li>
+                <li  class="top-nav-safe u2" > <a href="login.html">快速登录</a> </li>
+                <li class="top-nav-safe u1"> <a href="account">我的账户</a> </li>
+                <li> <a href="company.html">关于我们</a> </li>
+            </ul>
+        </div>
+    </div>
+</header>
