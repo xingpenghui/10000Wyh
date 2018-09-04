@@ -12,4 +12,17 @@
     <artifactId>10000Wyh_UserService</artifactId>
 
 
+    <dependencies>
+        <dependency>
+            <groupId>com.wyh10000</groupId>
+            <artifactId>10000Wyh_Domain</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.wyh10000</groupId>
+            <artifactId>10000Wyh_Common</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+    </dependencies>
+
 </project>
