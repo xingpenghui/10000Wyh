@@ -13,6 +13,7 @@
         <module name="10000Wyh_SSOService" />
         <module name="10000Wyh_SSOServiceProvider" />
         <module name="10000Wyh_UserService" />
+        <module name="10000Wyh_UserServiceProvider" />
         <module name="10000Wyh_Web" />
         <module name="10000Wyh_WebController" />
       </profile>

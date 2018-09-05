@@ -22,11 +22,11 @@
     delete from t_user
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.wyh10000.domain.User">
-    insert into t_user (id, username, password, 
+  <insert id="insert" parameterType="com.wyh10000.domain.User" useGeneratedKeys="true" keyProperty="id">
+    insert into t_user ( username, password,
       phone, flag, createdate)
-    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{phone,jdbcType=CHAR}, #{flag,jdbcType=INTEGER}, #{createdate,jdbcType=DATE})
+    values ( #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},
+      #{phone,jdbcType=CHAR},1, now())
   </insert>
   <insert id="insertSelective" parameterType="com.wyh10000.domain.User">
     insert into t_user

@@ -8,15 +8,20 @@
         <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>10000Wyh_WebController</artifactId>
-    <packaging>war</packaging>
+
+    <artifactId>10000Wyh_UserServiceProvider</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>com.wyh10000</groupId>
-            <artifactId>10000Wyh_UserServiceProvider</artifactId>
+            <artifactId>10000Wyh_Mapper</artifactId>
             <version>1.0.0</version>
         </dependency>
-
+        <dependency>
+            <groupId>com.wyh10000</groupId>
+            <artifactId>10000Wyh_UserService</artifactId>
+            <version>1.0.0</version>
+        </dependency>
     </dependencies>
+
 </project>

@@ -17,6 +17,7 @@
         <module>10000Wyh_SSOService</module>
         <module>10000Wyh_SSOServiceProvider</module>
         <module>10000Wyh_LoginController</module>
+        <module>10000Wyh_UserServiceProvider</module>
     </modules>
     <packaging>pom</packaging>
 
