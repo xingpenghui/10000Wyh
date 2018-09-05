@@ -317,7 +317,7 @@ function sub(fid,u) {
 		type:f.attr("method"),
 		data:f.serializeObject(),
 		success:function (obj) {
-			if(obj.code==0){
+			if(obj.code==1){
 				if(u.length>0){
                     location.href=u;
 				}

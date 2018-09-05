@@ -24,4 +24,13 @@
     <url-pattern>*.do</url-pattern>
   </servlet-mapping>
 
+  <!--配置cros实现跨域请求-->
+  <filter>
+    <filter-name>cros</filter-name>
+    <filter-class>com.wyh10000.common.cros.CROSFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>cros</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
 </web-app>
