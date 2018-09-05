@@ -1,10 +1,12 @@
 package com.wyh10000.common.result;
 
+import java.io.Serializable;
+
 /**
  *@Author feri
  *@Date Created in 2018/9/4 16:27
  */
-public class R {
+public class R implements Serializable {
     private int code;
     private String msg;
 

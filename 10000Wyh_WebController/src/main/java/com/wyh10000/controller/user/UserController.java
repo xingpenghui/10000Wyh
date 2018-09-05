@@ -5,6 +5,7 @@ import com.wyh10000.domain.User;
 import com.wyh10000.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -17,8 +18,9 @@ public class UserController {
     private UserService userService;
 
     //新增
-    @PostMapping("/usersave.do")
+    @RequestMapping("/usersave.do")
     public R save(User user){
+        System.err.println("a--->"+user);
         return userService.save(user);
     }
 }
