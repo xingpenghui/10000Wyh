@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <!--服务消费者-->
+    <!--1、应用名称-->
+    <dubbo:application name="ssoconsumer"></dubbo:application>
+    <!--2、配置注册中心-->
+    <dubbo:registry address="zookeeper://10.8.163.50:2181" check="false"></dubbo:registry>
+    <!--3、配置协议-->
+    <dubbo:protocol name="dubbo" port="20881"  ></dubbo:protocol>
+    <!--4、配置消费服务-->
+    <dubbo:reference interface="com.wyh10000.service.sso.SSOService" id="ssoProvider" retries="0"></dubbo:reference>
+</beans>

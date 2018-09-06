@@ -40,6 +40,6 @@ document.writeln("</div>");
 document.writeln("</div>");
 document.writeln("<div class=\'ft-record\'>");
 document.writeln("    <div class=\'ft-approve clearfix\'><a class=\'icon-approve approve-0 fadeIn-2s\' target=\'_blank\' href=\'#\'></a><a class=\'icon-approve approve-1 fadeIn-2s\' target=\'_blank\' href=\'#\'></a><a class=\'icon-approve approve-2 fadeIn-2s\' target=\'_blank\' href=\'#\'></a><a class=\'icon-approve approve-3 fadeIn-2s\' target=\'_blank\' href=\'#\'></a></div>");
-document.writeln("<div class=\'ft-identity\'>©2018 91Money All rights reserved&nbsp;&nbsp;&nbsp;<span class=\'color-e6\'>|</span>&nbsp;&nbsp;&nbsp;河南省91Money投资管理有限公司&nbsp;&nbsp;&nbsp;<span class=\'color-e6\'>|</span>&nbsp;&nbsp;&nbsp;<a target=\'_blank\' href=\'http://www.miitbeian.gov.cn/\'>豫ICP备12345678号-1</a></div>");
+document.writeln("<div class=\'ft-identity\'>©2018 万元户 All rights reserved&nbsp;&nbsp;&nbsp;<span class=\'color-e6\'>|</span>&nbsp;&nbsp;&nbsp;河南省万元户投资管理有限公司&nbsp;&nbsp;&nbsp;<span class=\'color-e6\'>|</span>&nbsp;&nbsp;&nbsp;<a target=\'_blank\' href=\'http://www.miitbeian.gov.cn/\'>豫ICP备12345678号-1</a></div>");
 document.writeln("</div>");
 document.writeln("</div>");

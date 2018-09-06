@@ -10,6 +10,7 @@
         <module name="10000Wyh_Domain" />
         <module name="10000Wyh_LoginController" />
         <module name="10000Wyh_Mapper" />
+        <module name="10000Wyh_SSOController" />
         <module name="10000Wyh_SSOService" />
         <module name="10000Wyh_SSOServiceProvider" />
         <module name="10000Wyh_UserService" />

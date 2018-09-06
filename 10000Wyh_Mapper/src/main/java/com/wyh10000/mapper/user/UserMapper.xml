@@ -104,4 +104,9 @@
       createdate = #{createdate,jdbcType=DATE}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="selectByName" resultMap="BaseResultMap">
+    select <include refid="Base_Column_List"></include>
+    from t_user where username=#{username}
+  </select>
 </mapper>
