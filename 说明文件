@@ -1,0 +1,25 @@
+谨以此名表达对学员的薪资的期望---万元户
+万元户项目是千锋郑州JAVA1803的基于分布式实现的金融项目
+开发工具：Idea\Eclispe
+版本控制器：SVN\GIT
+项目管理工具：Maven
+核心框架：Spring+SpringMVC+MyBatis(Hibrnate)
+开发方式：面向接口开发和面向服务开发(Dubbo+zookeeper)(SpringCloud)
+涉及到的技术点：
+前端：Html、CSS、JavaScript、jQuery、BootStrap、LayUI、Vue
+Web：Servlet、Filter、Listener、HttpSession、Cookie
+数据库：MySQL、Oracle、表、视图、触发器、存储过程、函数、索引等
+NO-SQL:Redis（常用基本类型、主从、哨兵、集群、JAVA代码操作Redis）、穿透、雪崩
+操作系统：Linux(常用命令)
+容器化引擎：Docker、K8s
+框架：Spring、SpringMVC、Spring Data、Shiro、Mybatis、Hibernate、Struts2、SpringBoot
+RPC：WebService
+服务框架:Dubbo、SpringCould（集成内容多）
+注册中心：Zookeeper
+消息中间件：MQ(RabbitMQ)
+负载均衡：Nginx
+搜索技术：Elasticsearch、Solr
+资源存储：OSS
+数据库分片：MyCat
+任务调度框架：Quartz
+模板引擎：Jsp、Freemarker、Thymeleaf
