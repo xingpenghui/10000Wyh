@@ -19,9 +19,9 @@ $(document).ready(function() {
         },
         submitHandler:function(form){
             $(form).ajaxSubmit({
-                method:$("#fm1").attr("method"),
+                method:$("#loginForm").attr("method"),
                 xhrFields: {withCredentials: true},
-                data:$("#fm1").serialize(),
+                data:$("#loginForm").serialize(),
                 success:function (obj) {
                     if(obj.code==1001){
                         location.href="index.html";

@@ -19,6 +19,7 @@
         <module>10000Wyh_LoginController</module>
         <module>10000Wyh_UserServiceProvider</module>
         <module>10000Wyh_SSOController</module>
+        <module>10000Wyh_FDFSController</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -214,6 +215,7 @@
                 <includes>
                     <include>**/*.xml</include>
                     <include>**/*.properties</include>
+                    <include>**/*.conf</include>
                 </includes>
             </resource>
         </resources>

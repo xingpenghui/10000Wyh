@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/10000Wyh_FDFSController" />
     <file type="web" url="file://$PROJECT_DIR$/10000Wyh_LoginController" />
     <file type="web" url="file://$PROJECT_DIR$/10000Wyh_SSOController" />
     <file type="web" url="file://$PROJECT_DIR$/10000Wyh_SSOServiceProvider" />
