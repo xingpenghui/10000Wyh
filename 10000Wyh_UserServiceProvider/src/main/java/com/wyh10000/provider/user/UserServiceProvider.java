@@ -21,7 +21,6 @@ public class UserServiceProvider implements UserService {
     @Override
     public R save(User user)
     {
-        System.err.println("provider---1111"+user.getUsername());
         return ResultUtil.createResult(userMapper.insert(user));
     }
 }

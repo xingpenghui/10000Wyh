@@ -1,6 +1,7 @@
 package com.wyh10000.common.redis;
 
 import redis.clients.jedis.Jedis;
+import redis.clients.jedis.JedisPool;
 
 import java.util.List;
 import java.util.Map;
@@ -17,12 +18,20 @@ public class JedisUtil {
     private int port;
     private String password;
     private Jedis jedis;
+    private JedisPool jedisPool;
 
     public JedisUtil(String host, int port, String password) {
         this.host = host;
         this.port = port;
         this.password = password;
         jedis=new Jedis(host,port);
+        jedis.auth(password);
+    }
+
+    public JedisUtil(JedisPool jedisPool,String password) {
+        this.jedisPool = jedisPool;
+        this.password=password;
+        jedis=jedisPool.getResource();
         jedis.auth(password);
     }
 

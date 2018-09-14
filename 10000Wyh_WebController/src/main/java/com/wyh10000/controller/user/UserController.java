@@ -1,5 +1,6 @@
 package com.wyh10000.controller.user;
 
+import com.wyh10000.common.redis.JedisUtil;
 import com.wyh10000.common.result.R;
 import com.wyh10000.domain.User;
 import com.wyh10000.service.user.UserService;
@@ -7,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 
 /**
  *@Author feri
@@ -17,10 +19,13 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+
+
     //新增
     @RequestMapping("/usersave.do")
     public R save(User user){
         System.err.println("a--->"+user);
         return userService.save(user);
     }
+
 }

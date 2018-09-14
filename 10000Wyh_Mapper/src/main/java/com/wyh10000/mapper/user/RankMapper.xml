@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wyh10000.mapper.user.RankMapper">
+  <resultMap id="BaseResultMap" type="com.wyh10000.domain.Rank">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="uid" jdbcType="INTEGER" property="uid" />
+    <result column="type" jdbcType="INTEGER" property="type" />
+    <result column="rankimages" jdbcType="VARCHAR" property="rankimages" />
+    <result column="createdate" jdbcType="DATE" property="createdate" />
+    <result column="flag" jdbcType="INTEGER" property="flag" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, uid, type, rankimages, createdate, flag
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_rank
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectByUid" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_rank
+    where uid = #{uid}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_rank
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.wyh10000.domain.Rank">
+    insert into t_rank ( uid, type, rankimages, createdate, flag)
+    values ( #{uid,jdbcType=INTEGER}, #{type,jdbcType=INTEGER},  #{rankimages,jdbcType=VARCHAR}, now(), 1)
+  </insert>
+  <insert id="insertSelective" parameterType="com.wyh10000.domain.Rank">
+    insert into t_rank
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="uid != null">
+        uid,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="rankimages != null">
+        rankimages,
+      </if>
+      <if test="createdate != null">
+        createdate,
+      </if>
+      <if test="flag != null">
+        flag,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="uid != null">
+        #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=INTEGER},
+      </if>
+      <if test="rankimages != null">
+        #{rankimages,jdbcType=VARCHAR},
+      </if>
+      <if test="createdate != null">
+        #{createdate,jdbcType=DATE},
+      </if>
+      <if test="flag != null">
+        #{flag,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wyh10000.domain.Rank">
+    update t_rank
+    <set>
+      <if test="uid != null">
+        uid = #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=INTEGER},
+      </if>
+      <if test="rankimages != null">
+        rankimages = #{rankimages,jdbcType=VARCHAR},
+      </if>
+      <if test="createdate != null">
+        createdate = #{createdate,jdbcType=DATE},
+      </if>
+      <if test="flag != null">
+        flag = #{flag,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wyh10000.domain.Rank">
+    update t_rank
+    set uid = #{uid,jdbcType=INTEGER},
+      type = #{type,jdbcType=INTEGER},
+      rankimages = #{rankimages,jdbcType=VARCHAR},
+      createdate = #{createdate,jdbcType=DATE},
+      flag = #{flag,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

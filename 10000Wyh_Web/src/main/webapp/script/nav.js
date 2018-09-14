@@ -12,8 +12,8 @@ document.writeln("        <li class=\'\'><span><a style=\'font-size:14px;padding
 document.writeln("        <li style=\'position:relative;\'> <span> <a href=\'个人中心-系统消息.html\'><i class=\'dot dot08\'></i>系统信息 </a> </span> </li>");
 document.writeln("        <li><span><a href=\'personal_info.html\'><i class=\'dot dot09\'></i>个人中心</a></span></li>");
 document.writeln("        <li class=\'\'><span><a style=\'font-size:14px;padding-left:50px;\' href=\'personal_basic.html\'>个人资料</a></span></li>");
-document.writeln("        <li class=\'\'><span><a style=\'font-size:14px;padding-left:50px;\' href=\'real_auth\'>实名认证</a></span></li>");
-document.writeln("        <li class=\'\'><span><a style=\'font-size:14px;padding-left:50px;\' href=\'user_file\'>风控资料</a></span></li>");
+document.writeln("        <li class=\'\'><span><a style=\'font-size:14px;padding-left:50px;\' href=\'real_auth.html\'>实名认证</a></span></li>");
+document.writeln("        <li class=\'\'><span><a style=\'font-size:14px;padding-left:50px;\' href=\'user_file.html\'>风控资料</a></span></li>");
 document.writeln("    </ul>");
 document.writeln("</div>");
 document.writeln("");

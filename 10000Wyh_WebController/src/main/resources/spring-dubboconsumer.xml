@@ -13,4 +13,6 @@
     <dubbo:protocol name="dubbo" port="20880"  ></dubbo:protocol>
     <!--4、配置消费服务-->
     <dubbo:reference interface="com.wyh10000.service.user.UserService" id="userProvider" retries="0"></dubbo:reference>
+    <dubbo:reference interface="com.wyh10000.service.user.UserDetailService" id="userDetailProvider" retries="0"></dubbo:reference>
+    <dubbo:reference interface="com.wyh10000.service.user.RankService" id="rankProvider" retries="0"></dubbo:reference>
 </beans>

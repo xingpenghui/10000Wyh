@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>万元户金融平台</title>
+    <title>万元户金融平台-风控资料上传</title>
     <meta name="keywords" content=""/>
     <meta name="description" content=""/>
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
@@ -17,15 +17,13 @@
     <style>
         .file-item.thumbnail, .file-item.thumbnail image{
             width: 300px;
-            height: 240px;
+            height: 200px;
         }
-
         .upload-state-done{
             border: #0fa24e 3px dashed;
             background-color: rgba(16, 253, 107, 0.16);
         }
-
-        #uploader-demo{
+        #uploader-demo1, #uploader-demo2{
             margin-bottom: 10px;
         }
 
@@ -44,30 +42,44 @@
             <div class=" panel panel-default">
                 <div class="panel-heading">风控资料</div>
                 <div class="panel-body">
-
-                    <c:forEach items="${userFiles}" var="file">
-                        <div class="col-sm-6 col-md-4">
-                            <div class="thumbnail">
-                                <img src="${file.file}"/>
-                                <div class="caption">
-                                    <h4>${file.fileType.title}</h4>
-                                    <p>得分：${file.score} &nbsp;&nbsp;状态：${file.stateDisplay}</p>
+                    <form class="form-horizontal" id="realAuthForm" method="post" action="http://localhost:8081/ranksave.do" novalidate="novalidate">
+                        <fieldset>
+                            <div class="form-group">
+                                <label class="col-sm-4  control-label" for="type">资料类型</label>
+                                <div class="col-sm-4">
+                                    <select class="form-control" name="type" id="type">
+                                        <option value="1">房产</option>
+                                        <option value="2">车辆</option>
+                                        <option value="3">流水</option>
+                                        <option value="4">保险</option>
+                                    </select>
+                                   </div>
+                            </div>
+                            <!--dom结构部分-->
+                            <div class="form-group">
+                                <label class="col-sm-4  control-label" >资料照片</label>
+                                <div class="col-sm-8">
+                                    <p class="text-help text-primary">请点击“选择图片”,选择资料照片，必须清晰可见。</p>
+                                    <!--dom结构部分-->
+                                    <div id="uploader-demo1">
+                                        <!--用来存放item-->
+                                        <div id="fileList1" class="uploader-list"></div>
+                                        <div id="filePicker1">上传身份证正面照片</div>
+                                    </div>
+                                    <input type="hidden" name="idimage1" id="uploadImage1" />
                                 </div>
                             </div>
-                        </div>
-                    </c:forEach>
-                    <!--dom结构部分-->
-                    <div id="uploader-demo">
-                        <!--用来存放item-->
-                        <div id="fileList" class="uploader-list"></div>
-                        <div id="filePicker">上传风控资料</div>
-                    </div>
+                            <div class="form-group">
+                                <button type="button" onclick="updateDetail()" class="btn btn-primary col-sm-offset-4" ><i class="icon-ok"></i>提交认证</button>
+                            </div>
 
+                        </fieldset>
+                    </form>
+                </div>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <div class="clear"></div>
     </div>
 </div>
 
@@ -77,7 +89,6 @@
 <script>
 
     $(function(){
-
         // 初始化Web Uploader
         var uploader = WebUploader.create(getOption('filePicker'))
             .on( 'fileQueued', function( file ) {
@@ -96,7 +107,7 @@
             return {
                 auto: true,// 选完文件后，是否自动上传。
                 swf: 'script/webuploader-0.1.5/Uploader.swf',// swf文件路径
-                server: 'user_file_upload',// 文件接收服务端。
+                server: 'http://localhost:8084/fileup.do',// 文件接收服务端。
                 pick: {
                     id:'#' + pickId
                 },// 选择文件的按钮。可选。内部根据当前运行是创建，可能是input元素，也可能是flash
@@ -151,6 +162,17 @@
             }
         }
     })
+    //保存
+    function updateDetail() {
+        var fm=$("#realAuthForm");
+        ajax1(fm.attr("method"),fm.attr("action"),fm.serialize(),function (obj) {
+            if(obj.code==0){
+                location.href="user_filelist.html.html";
+            }else{
+                layer.msg(obj.msg);
+            }
+        })
+    }
 </script>
 </body>
 </html>

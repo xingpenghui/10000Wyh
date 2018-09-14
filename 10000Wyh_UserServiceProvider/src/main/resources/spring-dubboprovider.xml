@@ -13,4 +13,7 @@ http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubb
     <dubbo:protocol name="dubbo" port="20880"></dubbo:protocol>
     <!--4、设置发布的服务-->
     <dubbo:service interface="com.wyh10000.service.user.UserService" ref="userServiceProvider" retries="0"></dubbo:service>
+    <dubbo:service interface="com.wyh10000.service.user.UserDetailService" ref="userDetailServiceProvider" retries="0"></dubbo:service>
+    <dubbo:service interface="com.wyh10000.service.user.RankService" ref="rankServiceProvider" retries="0"></dubbo:service>
+
 </beans>
