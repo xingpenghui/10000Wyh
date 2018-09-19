@@ -22,6 +22,11 @@
             <artifactId>10000Wyh_UserService</artifactId>
             <version>1.0.0</version>
         </dependency>
+        <dependency>
+            <groupId>com.wyh10000</groupId>
+            <artifactId>10000Wyh_LoanService</artifactId>
+            <version>1.0.0</version>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
         <dependency>
             <groupId>javax.servlet</groupId>

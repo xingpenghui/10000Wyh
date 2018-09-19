@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wyh10000.mapper.loan.LoanCreditLogMapper">
+  <resultMap id="BaseResultMap" type="com.wyh10000.domain.loan.LoanCreditLog">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="uid" jdbcType="INTEGER" property="uid" />
+    <result column="lid" jdbcType="INTEGER" property="lid" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, uid, lid, content, createtime
+  </sql>
+  <select id="selectByLid"  resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_loancreditlog
+    where lid = #{lid,jdbcType=INTEGER}
+  </select>
+
+  <insert id="insert" parameterType="com.wyh10000.domain.loan.LoanCreditLog">
+    insert into t_loancreditlog ( uid, lid,
+      content, createtime)
+    values ( #{uid,jdbcType=INTEGER}, #{lid,jdbcType=INTEGER},
+      #{content,jdbcType=VARCHAR}, now())
+  </insert>
+
+</mapper>

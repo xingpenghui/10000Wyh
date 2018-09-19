@@ -20,6 +20,9 @@
         <module>10000Wyh_UserServiceProvider</module>
         <module>10000Wyh_SSOController</module>
         <module>10000Wyh_FDFSController</module>
+        <module>10000Wyh_LoanService</module>
+        <module>10000Wyh_LoanServiceProvider</module>
+        <module>10000Wyh_Message</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -87,6 +90,11 @@
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-webmvc</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-jms</artifactId>
                 <version>${spring.version}</version>
             </dependency>
             <!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->

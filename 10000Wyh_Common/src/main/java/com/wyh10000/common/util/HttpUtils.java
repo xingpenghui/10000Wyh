@@ -1,5 +1,9 @@
 package com.wyh10000.common.util;
 
+import org.apache.http.client.HttpClient;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -46,6 +50,12 @@ public class HttpUtils {
 			huc.disconnect();
 		}
 		return null;
-		
 	}
+	public static String pullData(String url){
+		HttpClient client= HttpClientBuilder.create().build();
+		return null;
+	}
+
+
+
 }

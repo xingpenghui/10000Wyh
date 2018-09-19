@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:amq="http://activemq.apache.org/schema/core"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://activemq.apache.org/schema/core http://activemq.apache.org/schema/core/activemq-core.xsd">
+
+    <context:property-placeholder location="classpath:activemq.properties"></context:property-placeholder>
+
+
+    <!--<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">-->
+        <!---->
+    <!--</bean>-->
+    <!--2、连接工厂-->
+    <amq:connectionFactory id="amqconnectionFactory" brokerURL="${activemq.url}" userName="${activemq.name}" password="${activemq.pass}"></amq:connectionFactory>
+    <!--3、配置连接池-->
+    <bean id="connectionFactory" class="org.springframework.jms.connection.CachingConnectionFactory">
+        <property name="targetConnectionFactory" ref="amqconnectionFactory"></property>
+        <property name="sessionCacheSize" value="1000"></property>
+    </bean>
+    <!--4、定义队列-->
+    <bean id="loanqueue" class="org.apache.activemq.command.ActiveMQQueue">
+        <constructor-arg name="name" value="loanmsg"></constructor-arg>
+    </bean>
+    <!--5、模板-->
+    <bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+        <property name="connectionFactory" ref="connectionFactory"></property>
+        <property name="defaultDestination" ref="loanqueue"></property>
+        <property name="pubSubDomain" value="false"></property>
+    </bean>
+
+
+
+</beans>

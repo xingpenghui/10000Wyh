@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wyh10000.mapper.loan.LoanCreditMapper">
+  <resultMap id="BaseResultMap" type="com.wyh10000.domain.loan.LoanCredit">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="uid" jdbcType="INTEGER" property="uid" />
+    <result column="money" jdbcType="INTEGER" property="money" />
+    <result column="rate" jdbcType="REAL" property="rate" />
+    <result column="months" jdbcType="INTEGER" property="months" />
+    <result column="redMoney" jdbcType="INTEGER" property="redmoney" />
+    <result column="type" jdbcType="INTEGER" property="type" />
+    <result column="minMoney" jdbcType="INTEGER" property="minmoney" />
+    <result column="days" jdbcType="INTEGER" property="days" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="flag" jdbcType="INTEGER" property="flag" />
+    <result column="reason" jdbcType="VARCHAR" property="reason" />
+    <result column="updateDate" jdbcType="DATE" property="updatedate" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.wyh10000.domain.loan.LoanCredit">
+    <result column="info" jdbcType="LONGVARCHAR" property="info" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, uid, money, rate, months, redMoney, type, minMoney, days, title, createtime, 
+    flag, reason, updateDate
+  </sql>
+  <sql id="Blob_Column_List">
+    info
+  </sql>
+  <select id="selectById" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,info
+    from t_loancredit
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+
+  <select id="selectByUid" resultMap="ResultMapWithBLOBs">
+    select
+    <include refid="Base_Column_List" />
+    ,info
+    from t_loancredit
+    where uid=uid
+  </select>
+
+  <insert id="insert" parameterType="com.wyh10000.domain.loan.LoanCredit" useGeneratedKeys="true">
+    insert into t_loancredit (uid, money,
+      rate, months, redMoney, 
+      type, minMoney, days, 
+      title, createtime, flag, 
+      reason, updateDate, info)
+    values (#{uid,jdbcType=INTEGER}, #{money,jdbcType=INTEGER},
+      #{rate,jdbcType=REAL}, #{months,jdbcType=INTEGER}, #{redmoney,jdbcType=INTEGER}, 
+      #{type,jdbcType=INTEGER}, #{minmoney,jdbcType=INTEGER}, #{days,jdbcType=INTEGER}, 
+      #{title,jdbcType=VARCHAR},now(),1,  null, now(), null )
+  </insert>
+
+  <update id="updateFlag" parameterType="com.wyh10000.domain.loan.LoanCredit">
+    update t_loancredit set flag=#{flag} where id = #{id}
+  </update>
+
+
+</mapper>
