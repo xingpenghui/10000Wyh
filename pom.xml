@@ -23,6 +23,8 @@
         <module>10000Wyh_LoanService</module>
         <module>10000Wyh_LoanServiceProvider</module>
         <module>10000Wyh_Message</module>
+        <module>10000Wyh_InvestService</module>
+        <module>10000Wyh_InvestProvider</module>
     </modules>
     <packaging>pom</packaging>
 

@@ -34,6 +34,7 @@
         }
         //
         function save() {
+
             //验证余额是否够支付？
             var t=$("#tz").val();//投资金额
             if(detail.totalmoney>parseFloat(t)){
@@ -107,7 +108,7 @@
                     </div>
                     <ul class="darailbid-list g-right">
                         <li>项目编号：<label>{{id}}</label></li>
-                        <li>借款协议：《<a href="/Agreement/?id=3&type=borrow" target="_blank">万元户借款协议</a>》</li>
+                        <li>借款协议：《<a href="/agreement/?id=3&type=borrow" target="_blank">万元户借款协议</a>》</li>
                         <li>还款方式：按月付息到期还本</li>
                         <li>起 息 日：投标成功时起息</li>
                         <li>开标时间：<label>{{authdate}}</label></li>
@@ -118,7 +119,7 @@
                 </div>
             </div>
             <div class="g-right wg3 g-ohide">
-                <form class="js-auto js-vtip" method="post" id="stateform" action="http://localhost:9092/investsave.do" >
+                <form class="js-auto js-vtip" method="post" id="stateform" action="http://localhost:8081/investadd.do" >
                     <div class="detailbid-usermoenytext">
                         <span class="g-left fs16">可用余额：<label>{{totalmoney}}</label>元</span>
                         <a class="g-right btn-bordsmall c-normal" href="pay.html">充 值</a>
@@ -129,12 +130,12 @@
                     </div>
                     <div class="detailbid-usermoeny">
                         <span class="fs24">投资金额：</span>
-                        <input type="number" class="fs12 ff-songTi" placeholder="请输入投资金额" id="tz"></input>
+                        <input type="number" class="fs12 ff-songTi" placeholder="请输入投资金额" name="money" id="tz"></input>
                     </div>
                     <div class="detailbid-usermoeny">
                         <span class="fs24">付款方式：</span>
-                        <input type="radio" class="fs12 ff-songTi"name="type" value="0">余额</input>
-                        <input type="radio" class="fs12 ff-songTi"name="type" value="1">在线</input>
+                        <input type="radio" class="fs12 ff-songTi" name="type" id="t1" value="0" checked>余额</input>
+                        <input type="radio" class="fs12 ff-songTi" name="type" id="t2" value="1">在线</input>
                     </div>
                     <div class="detailbid-usermoeny fs18 fcred-3 g-fbold">
                         <span id="content_content_ownborrowState">{{flagname}}</span>

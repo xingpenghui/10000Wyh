@@ -9,6 +9,8 @@
         <module name="10000Wyh_Common" />
         <module name="10000Wyh_Domain" />
         <module name="10000Wyh_FDFSController" />
+        <module name="10000Wyh_InvestProvider" />
+        <module name="10000Wyh_InvestService" />
         <module name="10000Wyh_LoanService" />
         <module name="10000Wyh_LoanServiceProvider" />
         <module name="10000Wyh_LoginController" />

@@ -16,7 +16,7 @@ NO-SQL:Redis（常用基本类型、主从、哨兵、集群、JAVA代码操作R
 RPC：WebService
 服务框架:Dubbo、SpringCould（集成内容多）
 注册中心：Zookeeper
-消息中间件：MQ(RabbitMQ)
+消息中间件：MQ(RabbitMQ、ActiveMQ)
 负载均衡：Nginx
 搜索技术：Elasticsearch、Solr
 资源存储：OSS

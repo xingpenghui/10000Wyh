@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wyh10000.mapper.invest.IncrementMapper">
+  <resultMap id="BaseResultMap" type="com.wyh10000.domain.invest.Increment">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="iid" jdbcType="INTEGER" property="iid" />
+    <result column="lxmoney" jdbcType="INTEGER" property="lxmoney" />
+    <result column="fxmoney" jdbcType="INTEGER" property="fxmoney" />
+    <result column="jlmoney" jdbcType="INTEGER" property="jlmoney" />
+    <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="startdate" jdbcType="DATE" property="startdate" />
+    <result column="enddate" jdbcType="DATE" property="enddate" />
+    <result column="money" jdbcType="INTEGER" property="money" />
+    <result column="flag" jdbcType="INTEGER" property="flag" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, iid, lxmoney, fxmoney, jlmoney, createtime, startdate, enddate, money, flag
+  </sql>
+
+  <select id="selectByIid" resultMap="BaseResultMap">
+    select <include refid="Base_Column_List"></include>
+    from t_increment where iid=#{iid}
+  </select>
+  <select id="selectByUid" resultMap="BaseResultMap">
+    select <include refid="Base_Column_List"></include>
+    from t_increment where uid=#{uid} and flag !=4
+  </select>
+  <insert id="insert" parameterType="com.wyh10000.domain.invest.Increment">
+    insert into t_increment ( iid, lxmoney, fxmoney, jlmoney, createtime,  startdate, enddate, money,  flag)
+    values ( #{iid,jdbcType=INTEGER}, #{lxmoney,jdbcType=INTEGER},
+      #{fxmoney,jdbcType=INTEGER}, #{jlmoney,jdbcType=INTEGER}, now(),
+      #{startdate,jdbcType=DATE}, #{enddate,jdbcType=DATE}, #{money,jdbcType=INTEGER}, 1)
+  </insert>
+
+  <update id="updateByPrimaryKey" parameterType="com.wyh10000.domain.invest.Increment">
+    update t_increment
+    set iid = #{iid,jdbcType=INTEGER},
+      lxmoney = #{lxmoney,jdbcType=INTEGER},
+      fxmoney = #{fxmoney,jdbcType=INTEGER},
+      jlmoney = #{jlmoney,jdbcType=INTEGER},
+      createtime = #{createtime,jdbcType=TIMESTAMP},
+      startdate = #{startdate,jdbcType=DATE},
+      enddate = #{enddate,jdbcType=DATE},
+      money = #{money,jdbcType=INTEGER},
+      flag = #{flag,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

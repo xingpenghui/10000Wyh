@@ -16,4 +16,7 @@ public interface LoanCreditService {
     R saveLog(LoanCreditLog loanCreditLog);
     //查询
     List<LoanCredit> queryList(int uid);
+
+
+
 }

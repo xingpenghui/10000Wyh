@@ -6,7 +6,7 @@
 
     <!--服务消费者-->
     <!--1、应用名称-->
-    <dubbo:application name="userconsumer"></dubbo:application>
+    <dubbo:application name="webconsumer"></dubbo:application>
     <!--2、配置注册中心-->
     <dubbo:registry address="zookeeper://10.8.163.50:2181" check="false"></dubbo:registry>
     <!--3、配置协议-->
@@ -15,6 +15,7 @@
     <dubbo:reference interface="com.wyh10000.service.user.UserService" id="userProvider" retries="0"></dubbo:reference>
     <dubbo:reference interface="com.wyh10000.service.user.UserDetailService" id="userDetailProvider" retries="0"></dubbo:reference>
     <dubbo:reference interface="com.wyh10000.service.user.RankService" id="rankProvider" retries="0"></dubbo:reference>
-
     <dubbo:reference interface="com.wyh10000.service.loan.LoanCreditService" id="loanCreditProvider" retries="0"></dubbo:reference>
+    <dubbo:reference interface="com.wyh10000.service.invest.IncrementService" id="incrementProvider" retries="0"></dubbo:reference>
+    <dubbo:reference interface="com.wyh10000.service.invest.InvestService" id="investProvider" retries="0"></dubbo:reference>
 </beans>

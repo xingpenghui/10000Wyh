@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wyh10000.mapper.invest.IncrementLogMapper">
+  <resultMap id="BaseResultMap" type="com.wyh10000.domain.invest.IncrementLog">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="inid" jdbcType="INTEGER" property="inid" />
+    <result column="money" jdbcType="INTEGER" property="money" />
+    <result column="type" jdbcType="INTEGER" property="type" />
+    <result column="flag" jdbcType="INTEGER" property="flag" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, inid, money, type, flag, content, createtime
+  </sql>
+
+  <insert id="insert" parameterType="com.wyh10000.domain.invest.IncrementLog">
+    insert into t_incrementlog (inid, money, type, flag, content,  createtime)
+    values ( #{inid,jdbcType=INTEGER}, #{money,jdbcType=INTEGER},
+      #{type,jdbcType=INTEGER}, #{flag,jdbcType=INTEGER}, #{content,jdbcType=VARCHAR},  now())
+  </insert>
+  <insert id="insertSelective" parameterType="com.wyh10000.domain.invest.IncrementLog">
+    insert into t_incrementlog
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="inid != null">
+        inid,
+      </if>
+      <if test="money != null">
+        money,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="flag != null">
+        flag,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="createtime != null">
+        createtime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="inid != null">
+        #{inid,jdbcType=INTEGER},
+      </if>
+      <if test="money != null">
+        #{money,jdbcType=INTEGER},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=INTEGER},
+      </if>
+      <if test="flag != null">
+        #{flag,jdbcType=INTEGER},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wyh10000.domain.invest.IncrementLog">
+    update t_incrementlog
+    <set>
+      <if test="inid != null">
+        inid = #{inid,jdbcType=INTEGER},
+      </if>
+      <if test="money != null">
+        money = #{money,jdbcType=INTEGER},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=INTEGER},
+      </if>
+      <if test="flag != null">
+        flag = #{flag,jdbcType=INTEGER},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        createtime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wyh10000.domain.invest.IncrementLog">
+    update t_incrementlog
+    set inid = #{inid,jdbcType=INTEGER},
+      money = #{money,jdbcType=INTEGER},
+      type = #{type,jdbcType=INTEGER},
+      flag = #{flag,jdbcType=INTEGER},
+      content = #{content,jdbcType=VARCHAR},
+      createtime = #{createtime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

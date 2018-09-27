@@ -34,7 +34,7 @@
 	<!--4、设置Mybatis的映射文件的信息 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<!-- 设置映射文件所在包 -->
-		<property name="basePackage" value="com.wyh10000.mapper.loan"></property>
+		<property name="basePackage" value="com.wyh10000.mapper.invest"></property>
 	</bean>
 	
 </beans>

@@ -3,6 +3,7 @@
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/10000Wyh_FDFSController" />
+    <file type="web" url="file://$PROJECT_DIR$/10000Wyh_InvestProvider" />
     <file type="web" url="file://$PROJECT_DIR$/10000Wyh_LoanServiceProvider" />
     <file type="web" url="file://$PROJECT_DIR$/10000Wyh_LoginController" />
     <file type="web" url="file://$PROJECT_DIR$/10000Wyh_Message" />
